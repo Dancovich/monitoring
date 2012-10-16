@@ -1,0 +1,69 @@
+~~ Demoiselle Framework
+~~ Copyright (C) 2011 SERPRO
+~~ ----------------------------------------------------------------------------
+~~ This file is part of Demoiselle Framework.
+~~ 
+~~ Demoiselle Framework is free software; you can redistribute it and/or
+~~ modify it under the terms of the GNU Lesser General Public License version 3
+~~ as published by the Free Software Foundation.
+~~ 
+~~ This program is distributed in the hope that it will be useful,
+~~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+~~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+~~ GNU General Public License for more details.
+~~ 
+~~ You should have received a copy of the GNU Lesser General Public License version 3
+~~ along with this program; if not,  see <http://www.gnu.org/licenses/>
+~~ or write to the Free Software Foundation, Inc., 51 Franklin Street,
+~~ Fifth Floor, Boston, MA  02110-1301, USA.
+~~ ----------------------------------------------------------------------------
+~~ Este arquivo é parte do Framework Demoiselle.
+~~ 
+~~ O Framework Demoiselle é um software livre; você pode redistribuí-lo e/ou
+~~ modificá-lo dentro dos termos da GNU LGPL versão 3 como publicada pela Fundação
+~~ do Software Livre (FSF).
+~~ 
+~~ Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA
+~~ GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer MERCADO ou
+~~ APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/LGPL em português
+~~ para maiores detalhes.
+~~ 
+~~ Você deve ter recebido uma cópia da GNU LGPL versão 3, sob o título
+~~ "LICENCA.txt", junto com esse programa. Se não, acesse <http://www.gnu.org/licenses/>
+~~ ou escreva para a Fundação do Software Livre (FSF) Inc.,
+~~ 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
+
+                                    ------
+                                    Notas de Versão
+
+Notas de Versão
+
+~~* {{{../2.0.0}v2.0.0}}
+~~
+~~  * {{{http://sourceforge.net/apps/mantisbt/demoiselle/view.php?id=999}0000999}}: Descrição do caso resolvido.
+
+* {{{../2.0.0}v2.0.0}}
+
+  * {{{http://sourceforge.net/apps/mantisbt/demoiselle/view.php?id=548}0000548}}: Compatibilidade com o Demoiselle v2.
+  
+  * Criação da versão do componente compatível com o Demoiselle Framework v2. 
+
+* {{{../1.1.2}v1.1.2}}
+  
+  * {{{http://sourceforge.net/apps/mantisbt/demoiselle/view.php?id=718}0000718}}: [Improvement] Mudar prefixo das chaves para o padrão no demoiselle.properties
+
+* {{{../1.1.1}v1.1.1}}
+  
+  * {{{http://sourceforge.net/apps/mantisbt/demoiselle/view.php?id=702}0000702}}: [Bug] Componente não efetua o carregamento do Agente SNMP na inicialização
+
+* {{{../1.1.0}v1.1.0}}
+  
+  * {{{http://sourceforge.net/apps/mantisbt/demoiselle/view.php?id=656}0000656}}: [Feature Request] Centralização das parametrizações no arquivo <<demoiselle.properties>>.
+  
+  * {{{http://sourceforge.net/apps/mantisbt/demoiselle/view.php?id=657}0000657}}: [Feature Request] Inclusao de parametrização através de váriáveis de ambiente. 
+
+* {{{../1.0.0}v1.0.0}}
+  
+  * {{{http://sourceforge.net/apps/mantisbt/demoiselle/view.php?id=191}0000191}}: [Feature Request] Criação de componente para monitoração das aplicações
+
+  * Versão inicial do componente

@@ -1,0 +1,4 @@
+br.gov.frameworkdemoiselle.monitoring.internal.bootstrap.MBeanBootstrap
+br.gov.frameworkdemoiselle.monitoring.internal.bootstrap.CheckerBootstrap
+br.gov.frameworkdemoiselle.monitoring.internal.bootstrap.SNMPAgentBootstrap
+br.gov.frameworkdemoiselle.monitoring.internal.bootstrap.ZabbixAgentBootstrap

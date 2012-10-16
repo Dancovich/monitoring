@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Demoiselle Framework
+ Copyright (C) 2011 SERPRO
+ ============================================================================
+ This file is part of Demoiselle Framework.
+ 
+ Demoiselle Framework is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public License version 3
+ as published by the Free Software Foundation.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public License version 3
+ along with this program; if not,  see <http://www.gnu.org/licenses/>
+ or write to the Free Software Foundation, Inc., 51 Franklin Street,
+ Fifth Floor, Boston, MA  02110-1301, USA.
+ ============================================================================
+ Este arquivo é parte do Framework Demoiselle.
+ 
+ O Framework Demoiselle é um software livre; você pode redistribuí-lo e/ou
+ modificá-lo dentro dos termos da GNU LGPL versão 3 como publicada pela Fundação
+ do Software Livre (FSF).
+ 
+ Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA
+ GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer MERCADO ou
+ APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/LGPL em português
+ para maiores detalhes.
+ 
+ Você deve ter recebido uma cópia da GNU LGPL versão 3, sob o título
+ "LICENCA.txt", junto com esse programa. Se não, acesse <http://www.gnu.org/licenses/>
+ ou escreva para a Fundação do Software Livre (FSF) Inc.,
+ 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
+-->
+<snmp-security>
+	<security>
+		<user name="SHADES">
+			<auth protocol="SHA" pass="SHADESAuthPassword" />
+			<priv protocol="DES" pass="SHADESPrivPassword" />
+		</user>
+		<user name="TEST">
+			<auth protocol="SHA" pass="maplesyrup" />
+			<priv protocol="DES" pass="maplesyrup" />
+		</user>
+		<user name="SHA">
+			<auth protocol="SHA" pass="SHAAuthPassword" />
+		</user>
+		<user name="escola">
+			<auth protocol="SHA" pass="senha123" />
+			<priv protocol="AES" pass="senha456" />
+		</user>
+		<user name="zabbix">
+			<auth protocol="MD5" pass="senha321" />
+			<priv protocol="DES" pass="senha654" />
+		</user>
+	</security>
+	<access-control>
+		<views>
+			<view name="fullReadView">
+				<include subtree="1.3" mask="" />
+			</view>
+			<view name="fullWriteView">
+				<include subtree="1.3" />
+			</view>
+			<view name="fullNotifyView">
+				<include subtree="1.3" />
+			</view>
+			<view name="restrictedReadView">
+				<include subtree="1.3.6.1.2" />
+			</view>
+			<view name="restrictedWriteView">
+				<include subtree="1.3.6.1.2.1" />
+			</view>
+			<view name="restrictedNotifyView">
+				<include subtree="1.3.6.1.2" />
+			</view>
+			<view name="testReadView">
+				<include subtree="1.3.6.1.2" mask="" />
+				<exclude subtree="1.3.6.1.2.1.1" mask="" />
+			</view>
+			<view name="testWriteView">
+				<include subtree="1.3.6.1.2.1" />
+			</view>
+			<view name="testNotifyView">
+				<include subtree="1.3.6.1.2" />
+			</view>
+			<view name="escolaReadView">
+				<include subtree="1.3.6.1.4.1.35437.1.1.25.3.1" />
+			</view>
+			<view name="escolaWriteView">
+				<include subtree="1.3.6.1.4.1.35437.1.1.25.3.1.5.0" />
+			</view>
+			<view name="escolaNotifyView">
+				<include subtree="1.3.6.1.4.1.35437.1.1.25" />
+			</view>
+		</views>
+		<groups>
+			<group name="v1v2group">
+				<security name="public" model="SNMPv1" />
+				<security name="public" model="SNMPv2c" />
+				<access context="" model="ANY" auth="false" priv="false" exact="true">
+					<read view="fullReadView" />
+					<write view="fullWriteView" />
+					<notify view="fullNotifyView" />
+				</access>
+			</group>
+			<group name="v3group">
+				<security name="SHADES" model="USM" />
+				<access context="" model="USM" auth="true" priv="true" exact="true">
+					<read view="fullReadView" />
+					<write view="fullWriteView" />
+					<notify view="fullNotifyView" />
+				</access>
+			</group>
+			<group name="v3test">
+				<security name="TEST" model="USM" />
+				<access model="USM" auth="true" priv="true" exact="true">
+					<read view="testReadView" />
+					<write view="testWriteView" />
+					<notify view="testNotifyView" />
+				</access>
+			</group>
+			<group name="v3restricted">
+				<security name="SHA" model="USM" />
+				<access model="USM" auth="true" priv="false" exact="true">
+					<read view="restrictedReadView" />
+					<write view="restrictedWriteView" />
+					<notify view="restrictedNotifyView" />
+				</access>
+			</group>
+			<group name="v3escola">
+				<security name="escola" model="USM" />
+				<security name="zabbix" model="USM" />
+				<access model="USM" auth="true" priv="true" exact="true">
+					<read view="escolaReadView" />
+					<write view="escolaWriteView" />
+					<notify view="escolaNotifyView" />
+				</access>
+			</group>
+		</groups>
+	</access-control>
+</snmp-security>
