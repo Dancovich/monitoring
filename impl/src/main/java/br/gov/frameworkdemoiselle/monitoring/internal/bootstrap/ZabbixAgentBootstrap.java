@@ -86,7 +86,7 @@ public class ZabbixAgentBootstrap extends AbstractLifecycleBootstrap<Startup> {
 			readConfiguration();
 		}
 		if (config.isAgentEnabled()) {
-			logger.info(getBundle().getString("agent-zabbix-startup"));
+			logger.info(getBundle(BootstrapConstants.BUNDLE_NAME).getString("agent-zabbix-startup"));
 			agent = Beans.getReference(ZabbixAgent.class);
 			agent.startup();
 			started = true;
@@ -95,16 +95,15 @@ public class ZabbixAgentBootstrap extends AbstractLifecycleBootstrap<Startup> {
 	
 	public void onShutdown(@Observes final BeforeShutdown event) {
 		if (started) {
-			logger.info(getBundle().getString("agent-zabbix-shutdown"));
+			logger.info(getBundle(BootstrapConstants.BUNDLE_NAME).getString("agent-zabbix-shutdown"));
 			agent.shutdown();
 			agent = null;
 		}
 	}
 	
-	@Override
-	protected ResourceBundle getBundle() {
+	protected ResourceBundle getBundle(String resource) {
 		if (this.bundle == null) {
-			this.bundle = ResourceBundleProducer.create(BootstrapConstants.BUNDLE_NAME, Locale.getDefault());
+			this.bundle = ResourceBundleProducer.create(resource, Locale.getDefault());
 		}
 
 		return this.bundle;

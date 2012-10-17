@@ -85,9 +85,9 @@ public class CheckerBootstrap extends AbstractLifecycleBootstrap<Startup> {
 
 	public void startCheckers(@Observes final AfterDeploymentValidation event) {
 		CheckerHandler handler = null;
-		logger.info(getBundle().getString("bootstrap-checkers-starting"));
+		logger.info(getBundle(BootstrapConstants.BUNDLE_NAME).getString("bootstrap-checkers-starting"));
 		for (AnnotatedType<?> type : types) {
-			logger.debug(getBundle().
+			logger.debug(getBundle(BootstrapConstants.BUNDLE_NAME).
 					getString("bootstrap-checkers-loading", type.getJavaClass().getName()));
 			handler = Beans.getReference(CheckerHandler.class);
 			handler.start(Beans.getReference(type.getJavaClass()));
@@ -96,18 +96,16 @@ public class CheckerBootstrap extends AbstractLifecycleBootstrap<Startup> {
 	}
 	
 	public void shuttingDown(@Observes final BeforeShutdown event){
-		logger.info(getBundle().getString("bootstrap-checkers-stopping"));
+		logger.info(getBundle(BootstrapConstants.BUNDLE_NAME).getString("bootstrap-checkers-stopping"));
 		for (CheckerHandler handler : handlers) {
 			handler.stop();
 		}
 	}
 	
 	
-
-	@Override
-	protected ResourceBundle getBundle() {
+	protected ResourceBundle getBundle(String resource) {
 		if (this.bundle == null) {
-			this.bundle = ResourceBundleProducer.create(BootstrapConstants.BUNDLE_NAME, Locale.getDefault());
+			this.bundle = ResourceBundleProducer.create(resource, Locale.getDefault());
 		}
 
 		return this.bundle;

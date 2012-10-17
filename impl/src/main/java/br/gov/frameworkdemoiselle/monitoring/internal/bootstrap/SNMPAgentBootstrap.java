@@ -107,7 +107,7 @@ public class SNMPAgentBootstrap extends AbstractLifecycleBootstrap<Startup> {
 		}
 		
 		if (config.isAgentEnabled()) {
-			logger.info(getBundle().getString("agent-snmp-startup"));
+			logger.info(getBundle(BootstrapConstants.BUNDLE_NAME).getString("agent-snmp-startup"));
 			agent = Beans.getReference(SNMPAgent.class);
 
 			if (types != null && !types.isEmpty()) {
@@ -118,7 +118,7 @@ public class SNMPAgentBootstrap extends AbstractLifecycleBootstrap<Startup> {
 				for (AnnotatedType<?> type : types) {
 					
 					final Class<?> clazz = type.getJavaClass();
-					logger.debug(getBundle().
+					logger.debug(getBundle(BootstrapConstants.BUNDLE_NAME).
 							getString("agent-snmp-loading-mib", clazz.getName()));
 					
 					final Object mbean = Beans.getReference(clazz);
@@ -136,16 +136,15 @@ public class SNMPAgentBootstrap extends AbstractLifecycleBootstrap<Startup> {
 	
 	public void onShutdown(@Observes final BeforeShutdown event) {
 		if (started) {
-			logger.info(getBundle().getString("agent-snmp-shutdown"));
+			logger.info(getBundle(BootstrapConstants.BUNDLE_NAME).getString("agent-snmp-shutdown"));
 			agent.shutdown();
 			agent = null;
 		}
 	}
 	
-	@Override
-	protected ResourceBundle getBundle() {
+	protected ResourceBundle getBundle(String resource) {
 		if (this.bundle == null) {
-			this.bundle = ResourceBundleProducer.create(BootstrapConstants.BUNDLE_NAME, Locale.getDefault());
+			this.bundle = ResourceBundleProducer.create(resource, Locale.getDefault());
 		}
 
 		return this.bundle;
