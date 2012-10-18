@@ -58,7 +58,7 @@
 	<properties>
 		<!-- Utilizada para categorizar o componente no site (http://demoiselle.sourceforge.net/component/) -->
 		<category>Ambiente</category>
-		<demoiselle.framework.version>2.3.0-RC3</demoiselle.framework.version>
+		<demoiselle.framework.version>2.3.0-SNAPSHOT</demoiselle.framework.version>
 		<demoiselle.junit.version>2.3.0-RC2-SNAPSHOT</demoiselle.junit.version>
 	</properties>
 	
