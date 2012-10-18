@@ -45,6 +45,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.snmp4j.agent.MOAccess;
 import org.snmp4j.smi.Gauge32;
@@ -57,6 +58,7 @@ import br.gov.frameworkdemoiselle.monitoring.annotation.snmp.access.ReadWrite;
 /**
  * @author SERPRO
  */
+@Ignore
 public class SNMPTypesTest {
 
 	@Test

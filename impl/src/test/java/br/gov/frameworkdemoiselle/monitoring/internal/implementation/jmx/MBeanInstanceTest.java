@@ -44,11 +44,13 @@ import javax.management.ObjectName;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
  * @author SERPRO
  */
+@Ignore
 public class MBeanInstanceTest {
 
 	private ObjectInstance oi; 

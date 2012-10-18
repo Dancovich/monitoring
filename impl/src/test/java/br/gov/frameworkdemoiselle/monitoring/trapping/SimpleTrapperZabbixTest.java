@@ -40,6 +40,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.easymock.PowerMock;
@@ -54,6 +55,7 @@ import br.gov.frameworkdemoiselle.util.ResourceBundle;
  * @author SERPRO
  */
 @RunWith(PowerMockRunner.class)
+@Ignore
 public class SimpleTrapperZabbixTest {
 
 	private SimpleTrapper trapper;

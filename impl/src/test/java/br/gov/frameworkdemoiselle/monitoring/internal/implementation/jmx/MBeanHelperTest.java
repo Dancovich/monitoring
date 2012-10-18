@@ -42,6 +42,7 @@ import static org.junit.Assert.assertTrue;
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -52,6 +53,7 @@ import br.gov.frameworkdemoiselle.monitoring.exception.MBeanException;
  * @author SERPRO
  */
 @RunWith(DemoiselleRunner.class)
+@Ignore
 public class MBeanHelperTest {
 
 	@Test

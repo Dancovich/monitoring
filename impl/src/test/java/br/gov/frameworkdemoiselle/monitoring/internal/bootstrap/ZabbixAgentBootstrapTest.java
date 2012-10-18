@@ -45,6 +45,7 @@ import static org.powermock.api.easymock.PowerMock.replayAll;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -65,6 +66,7 @@ import br.gov.frameworkdemoiselle.util.ResourceBundle;
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ Beans.class })
+@Ignore
 public class ZabbixAgentBootstrapTest {
 
 	private ZabbixAgentBootstrap zabbixAgentBootstrap;

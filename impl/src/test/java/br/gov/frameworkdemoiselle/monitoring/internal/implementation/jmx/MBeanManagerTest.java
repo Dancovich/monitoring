@@ -36,7 +36,9 @@
  */
 package br.gov.frameworkdemoiselle.monitoring.internal.implementation.jmx;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import javax.inject.Inject;
 import javax.management.MalformedObjectNameException;
@@ -45,6 +47,7 @@ import javax.management.ObjectName;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -58,6 +61,7 @@ import br.gov.frameworkdemoiselle.monitoring.internal.implementation.jmx.mbean.N
  * @author SERPRO
  */
 @RunWith(DemoiselleRunner.class)
+@Ignore
 public class MBeanManagerTest {
 
 	@Inject

@@ -44,6 +44,7 @@ import static org.powermock.api.easymock.PowerMock.mockStatic;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.easymock.PowerMock;
@@ -64,6 +65,7 @@ import br.gov.frameworkdemoiselle.util.ResourceBundle;
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(CoreBootstrap.class)
+@Ignore
 public class ZabbixAgentConfigTest {
 
 	private ZabbixAgentConfig config;

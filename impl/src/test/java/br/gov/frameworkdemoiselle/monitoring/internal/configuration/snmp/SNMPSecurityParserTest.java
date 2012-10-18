@@ -45,6 +45,7 @@ import javax.inject.Inject;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.snmp4j.security.UsmUser;
@@ -68,6 +69,7 @@ import br.gov.frameworkdemoiselle.monitoring.internal.implementation.snmp.securi
  * @author SERPRO
  */
 @RunWith(DemoiselleRunner.class)
+@Ignore
 public class SNMPSecurityParserTest {
 
 	@Inject

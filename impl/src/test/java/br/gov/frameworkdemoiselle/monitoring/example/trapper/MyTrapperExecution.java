@@ -38,6 +38,7 @@ package br.gov.frameworkdemoiselle.monitoring.example.trapper;
 
 import javax.inject.Inject;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -48,6 +49,7 @@ import br.gov.frameworkdemoiselle.monitoring.annotation.SNMP;
  * @author SERPRO
  */
 @RunWith(DemoiselleRunner.class)
+@Ignore
 public class MyTrapperExecution {
 
 	@Inject

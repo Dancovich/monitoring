@@ -36,6 +36,7 @@
  */
 package br.gov.frameworkdemoiselle.monitoring.example.agent;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -45,6 +46,7 @@ import br.gov.frameworkdemoiselle.junit.DemoiselleRunner;
  * @author SERPRO
  */
 @RunWith(DemoiselleRunner.class)
+@Ignore
 public class AgentExecution {
 
 	@Test

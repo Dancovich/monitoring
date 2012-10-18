@@ -38,6 +38,7 @@ package br.gov.frameworkdemoiselle.monitoring.example.mbean;
 
 import javax.inject.Inject;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -47,6 +48,7 @@ import br.gov.frameworkdemoiselle.junit.DemoiselleRunner;
  * @author SERPRO
  */
 @RunWith(DemoiselleRunner.class)
+@Ignore
 public class MBeanExecution {
 
 	@Inject
